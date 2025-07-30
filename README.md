@@ -381,6 +381,56 @@
       border-radius: 2px;
     }
 
+    /* Sección de documental */
+    .documentary-section {
+      background: linear-gradient(135deg, rgba(74, 104, 150, 0.1), rgba(15, 15, 15, 0.8));
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 1200px;
+      text-align: center;
+      border: 1px solid rgba(74, 104, 150, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .documentary-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L10 10 L10 0 M90 0 L90 10 L100 10 M100 90 L90 90 L90 100 M10 100 L10 90 L0 90' stroke='rgba(74,104,150,0.1)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+      z-index: -1;
+    }
+
+    .documentary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(74, 104, 150, 0.5);
+    }
+
+    .documentary-link:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(74, 104, 150, 0.7);
+    }
+
+    .documentary-link i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
     /* Footer */
     footer {
       background: linear-gradient(to bottom, rgba(15, 15, 15, 0.9), rgba(8, 8, 8, 0.95));
@@ -621,6 +671,15 @@
     </div>
   </div>
 
+  <!-- Nueva sección de documental -->
+  <div class="documentary-section">
+    <h2 class="section-title">Documental sobre Arañas Saltarinas</h2>
+    <p>Descubre más sobre estas fascinantes criaturas en este documental especial que explora su comportamiento, habilidades de caza y sorprendente inteligencia.</p>
+    <a href="https://www.youtube.com/watch?v=nLvfJ7zrlIk" class="documentary-link" target="_blank">
+      <i class="fas fa-play-circle"></i> Ver Documental Completo
+    </a>
+  </div>
+
   <footer>
     <a href="spider-world.html" class="back-button">
       <i class="fas fa-arrow-left"></i> Volver al Mundo de las Arañas
@@ -651,7 +710,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.info-section, .venom-section').forEach(section => {
+    document.querySelectorAll('.info-section, .venom-section, .documentary-section').forEach(section => {
       section.style.opacity = 0;
       section.style.transform = 'translateY(30px)';
       section.style.transition = 'all 0.6s ease';
